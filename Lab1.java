@@ -9,8 +9,10 @@ public class Lab1 {
 //C3 = C = 0
 //C5 = Q2 = 4; операція -
 //C7 = 4; тип індексів i та j = char
-        int a, b;
-        final int n, m;
+        final int a;
+        final int b;
+        final int n;
+        final int m;
         float res = 0f;
         try {
             Scanner num = new Scanner(System.in);
@@ -29,20 +31,22 @@ public class Lab1 {
             System.out.print("Your values is not integer!");
             return;
         }
-        if (a == 0){
-            System.out.print("Division by zero is impossible!");
+        if (a <= 0 || b < 0) {
+            System.out.print("Division by zero is impossible! a and b should be greater than or equal to zero!");
+        }
+        else if (a > Character.MAX_VALUE || b > Character.MAX_VALUE || n > Character.MAX_VALUE || m > Character.MAX_VALUE){
+            System.out.print("Error");
         }
         else if (a > n || b > m) {
             System.out.print("a should be less than n and b should be less than m");
         }
         else {
-            for (char i = Character.forDigit(a,10); Character.getNumericValue(i) <= n; i++) {
-                for (char j = Character.forDigit(b,10); Character.getNumericValue(j) <= m; j++) {
-                    res += ((double)Integer.parseInt(String.valueOf(i)) - (double)Integer.parseInt(String.valueOf(j))) / (double)Integer.parseInt(String.valueOf(i));
+            for (char i = (char)a; i <= n; i++) {
+                for (char j = (char)b; j <= m; j++) {
+                    res += (i - j) / (float) i;
                 }
             }
+            System.out.print("Result: " + res);
         }
-        float result = (float)res;
-        System.out.println("Result: " + result);
     }
 }
