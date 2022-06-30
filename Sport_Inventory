@@ -1,0 +1,36 @@
+class Sport_Inventory {
+    private final String name_of_balls;//Задаємо змінні private, щоб їх не можна було змінити в зовнішньому класі
+    private final int quantity_of_balls;//final - тому що вони більше не можуть змінюватися, оскільки відсутні сетери, які давали б таку можливість
+    private final String name_of_barbell;
+    private final int quantity_of_barbells;
+    private final String name_of_enterprise;
+
+    public Sport_Inventory(String name_of_balls, int quantity_of_balls, String name_of_barbell, int quantity_of_barbells, String name_of_enterprise) {/*Для визначення
+    об'єкту класу треба при заданні ввести 5 атрибутів*/
+        this.name_of_balls = name_of_balls;// Атрибут імені виробника м'ячів
+        this.quantity_of_balls = quantity_of_balls;//атрибут кількості м'ячів
+        this.name_of_barbell = name_of_barbell;//Атрибут імені виробника штанг
+        this.quantity_of_barbells = quantity_of_barbells;//Атрибут кількості штанг
+        this.name_of_enterprise = name_of_enterprise;//Атрибут імені підприємства або закладу, який потребує цей інвентар
+    }
+
+    public String getName_of_balls() {
+        return name_of_balls;
+    }//Метод, що повертатиме ім'я виробника м'чів
+
+    public int getQuantity_of_balls() {
+        return quantity_of_balls;
+    }//Метод, що повертатиме кількість м'чів
+
+    public String getName_of_barbell() {
+        return name_of_barbell;
+    }//Метод, що повертатиме ім'я виробника штанг
+
+    public int getQuantity_of_barbells() {
+        return quantity_of_barbells;
+    }//Метод, що повертатиме кількість штанг
+
+    public String getName_of_enterprise() {
+        return name_of_enterprise;
+    }//Метод, що повертатиме ім'я підприємства або закладу, який потребує цей інвентар
+}
